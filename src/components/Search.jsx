@@ -14,7 +14,7 @@ class Search extends React.Component {
     try {
       this.setState({ isLoading: true });
       const response = await fetch(
-        `http://www.omdbapi.com/?i=tt3896198&apikey=1dcfbf0b&s=${this.state.query}`
+        process.env.REACT_APP_BASE_URL + `${this.state.query}`
       );
       const data = await response.json();
       console.log(this.props.query);
